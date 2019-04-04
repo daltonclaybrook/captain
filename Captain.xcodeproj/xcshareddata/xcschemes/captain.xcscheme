@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "init --path ./foo/bar"
+            argument = "init"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

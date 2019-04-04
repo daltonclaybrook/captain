@@ -14,6 +14,8 @@
 		751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF97B22559DD800E9A464 /* InitCommand.swift */; };
 		751DF9812255A4B300E9A464 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF9802255A47000E9A464 /* Curry.framework */; };
 		751DF9822255A4B300E9A464 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF9802255A47000E9A464 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		751DF98522561EC700E9A464 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98422561EC700E9A464 /* Bridge.swift */; };
+		751DF9882256203A00E9A464 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF9872256203A00E9A464 /* PathBuilder.swift */; };
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
@@ -52,6 +54,8 @@
 		751DF7B622558D0F00E9A464 /* Yams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Yams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751DF97B22559DD800E9A464 /* InitCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCommand.swift; sourceTree = "<group>"; };
 		751DF9802255A47000E9A464 /* Curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		751DF98422561EC700E9A464 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		751DF9872256203A00E9A464 /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 		7571A7862254D7F000077C6D /* captain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7902254D7F100077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +94,22 @@
 			path = Commands;
 			sourceTree = "<group>";
 		};
+		751DF98322561EBD00E9A464 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				751DF98422561EC700E9A464 /* Bridge.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		751DF9862256202100E9A464 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				751DF9872256203A00E9A464 /* PathBuilder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7571A77D2254D7F000077C6D = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +134,7 @@
 		7571A7882254D7F000077C6D /* captain */ = {
 			isa = PBXGroup;
 			children = (
+				751DF9862256202100E9A464 /* Helpers */,
 				751DF7BD225592AB00E9A464 /* Commands */,
 				7571A7CE22557D2500077C6D /* Supporting Files */,
 				7571A7A92254DE1300077C6D /* main.swift */,
@@ -125,6 +146,7 @@
 		7571A79D2254D90900077C6D /* CaptainKit */ = {
 			isa = PBXGroup;
 			children = (
+				751DF98322561EBD00E9A464 /* Helpers */,
 				7571A7EE2255844300077C6D /* keep.swift */,
 				7571A7D022557D5A00077C6D /* Supporting Files */,
 			);
@@ -284,8 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751DF9882256203A00E9A464 /* PathBuilder.swift in Sources */,
 				7571A7AA2254DE1300077C6D /* main.swift in Sources */,
 				751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */,
+				751DF98522561EC700E9A464 /* Bridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

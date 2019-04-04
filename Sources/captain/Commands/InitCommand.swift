@@ -1,3 +1,4 @@
+import CaptainKit
 import Commandant
 import Curry
 import Result
@@ -7,6 +8,8 @@ struct InitCommand: CommandProtocol {
     let function = "Creates a .captain.yml file"
 
     func run(_ options: InitOptions) -> Result<(), CommandantError<()>> {
+        let fullPath = PathBuilder.fullPath(from: options.path)
+        print(fullPath)
         return .success(())
     }
 }
