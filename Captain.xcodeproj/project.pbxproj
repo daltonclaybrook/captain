@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751DF7B722558D6E00E9A464 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B522558D0C00E9A464 /* Commandant.framework */; };
+		751DF7B822558D6E00E9A464 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B522558D0C00E9A464 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		751DF7BA22558D7200E9A464 /* Yams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B622558D0F00E9A464 /* Yams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		751DF7BC22558D7900E9A464 /* Yams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B622558D0F00E9A464 /* Yams.framework */; };
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
-		7571A7EC2255832D00077C6D /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A7E6225580F100077C6D /* Commandant.framework */; };
-		7571A7ED2255832D00077C6D /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A7E6225580F100077C6D /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7EF2255844300077C6D /* keep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7EE2255844300077C6D /* keep.swift */; };
-		7571A7F5225585B600077C6D /* Yams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A7F32255859700077C6D /* Yams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7571A7F7225585C100077C6D /* Yams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A7F32255859700077C6D /* Yams.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +34,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7571A7F5225585B600077C6D /* Yams.framework in Embed Frameworks */,
-				7571A7ED2255832D00077C6D /* Commandant.framework in Embed Frameworks */,
+				751DF7BA22558D7200E9A464 /* Yams.framework in Embed Frameworks */,
+				751DF7B822558D6E00E9A464 /* Commandant.framework in Embed Frameworks */,
 				7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -44,14 +44,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		751DF7B522558D0C00E9A464 /* Commandant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commandant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		751DF7B622558D0F00E9A464 /* Yams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Yams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7862254D7F000077C6D /* captain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7902254D7F100077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A79F2254D90900077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A7A92254DE1300077C6D /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		7571A7E6225580F100077C6D /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Captain-fzpoctugycxgyjcgrqsgccdkxfir/Build/Products/Debug/Commandant.framework"; sourceTree = "<group>"; };
 		7571A7EE2255844300077C6D /* keep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keep.swift; sourceTree = "<group>"; };
-		7571A7F32255859700077C6D /* Yams.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yams.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Captain-fzpoctugycxgyjcgrqsgccdkxfir/Build/Products/Debug/Yams.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7571A7EC2255832D00077C6D /* Commandant.framework in Frameworks */,
+				751DF7B722558D6E00E9A464 /* Commandant.framework in Frameworks */,
 				7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7571A7F7225585C100077C6D /* Yams.framework in Frameworks */,
+				751DF7BC22558D7900E9A464 /* Yams.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 		7571A7CE22557D2500077C6D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7571A7E6225580F100077C6D /* Commandant.framework */,
+				751DF7B522558D0C00E9A464 /* Commandant.framework */,
 				7571A7902254D7F100077C6D /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -125,7 +125,7 @@
 		7571A7D022557D5A00077C6D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7571A7F32255859700077C6D /* Yams.framework */,
+				751DF7B622558D0F00E9A464 /* Yams.framework */,
 				7571A79F2254D90900077C6D /* Info.plist */,
 			);
 			path = "Supporting Files";
