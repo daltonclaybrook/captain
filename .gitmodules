@@ -7,3 +7,6 @@
 [submodule "Submodules/Result"]
 	path = Submodules/Result
 	url = https://github.com/antitypical/Result.git
+[submodule "Submodules/Curry"]
+	path = Submodules/Curry
+	url = https://github.com/thoughtbot/Curry.git

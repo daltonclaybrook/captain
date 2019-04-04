@@ -11,6 +11,9 @@
 		751DF7B822558D6E00E9A464 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B522558D0C00E9A464 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		751DF7BA22558D7200E9A464 /* Yams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B622558D0F00E9A464 /* Yams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		751DF7BC22558D7900E9A464 /* Yams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B622558D0F00E9A464 /* Yams.framework */; };
+		751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF97B22559DD800E9A464 /* InitCommand.swift */; };
+		751DF9812255A4B300E9A464 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF9802255A47000E9A464 /* Curry.framework */; };
+		751DF9822255A4B300E9A464 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF9802255A47000E9A464 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
@@ -34,6 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				751DF9822255A4B300E9A464 /* Curry.framework in Embed Frameworks */,
 				751DF7BA22558D7200E9A464 /* Yams.framework in Embed Frameworks */,
 				751DF7B822558D6E00E9A464 /* Commandant.framework in Embed Frameworks */,
 				7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */,
@@ -46,6 +50,8 @@
 /* Begin PBXFileReference section */
 		751DF7B522558D0C00E9A464 /* Commandant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commandant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751DF7B622558D0F00E9A464 /* Yams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Yams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		751DF97B22559DD800E9A464 /* InitCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCommand.swift; sourceTree = "<group>"; };
+		751DF9802255A47000E9A464 /* Curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7862254D7F000077C6D /* captain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7902254D7F100077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +67,7 @@
 			files = (
 				751DF7B722558D6E00E9A464 /* Commandant.framework in Frameworks */,
 				7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */,
+				751DF9812255A4B300E9A464 /* Curry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751DF7BD225592AB00E9A464 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				751DF97B22559DD800E9A464 /* InitCommand.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
 		7571A77D2254D7F000077C6D = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +97,10 @@
 				7571A79D2254D90900077C6D /* CaptainKit */,
 				7571A7872254D7F000077C6D /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
 		};
 		7571A7872254D7F000077C6D /* Products */ = {
 			isa = PBXGroup;
@@ -96,6 +114,7 @@
 		7571A7882254D7F000077C6D /* captain */ = {
 			isa = PBXGroup;
 			children = (
+				751DF7BD225592AB00E9A464 /* Commands */,
 				7571A7CE22557D2500077C6D /* Supporting Files */,
 				7571A7A92254DE1300077C6D /* main.swift */,
 			);
@@ -116,6 +135,7 @@
 		7571A7CE22557D2500077C6D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				751DF9802255A47000E9A464 /* Curry.framework */,
 				751DF7B522558D0C00E9A464 /* Commandant.framework */,
 				7571A7902254D7F100077C6D /* Info.plist */,
 			);
@@ -152,6 +172,7 @@
 				7571A7832254D7F000077C6D /* Frameworks */,
 				7571A7842254D7F000077C6D /* Resources */,
 				7571A7A82254D90900077C6D /* Embed Frameworks */,
+				751DF7C0225593A100E9A464 /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -237,12 +258,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		751DF7C0225593A100E9A464 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7571A7822254D7F000077C6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7571A7AA2254DE1300077C6D /* main.swift in Sources */,
+				751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
