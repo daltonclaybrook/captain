@@ -1,0 +1,9 @@
+[submodule "Submodules/Commandant"]
+	path = Submodules/Commandant
+	url = git@github.com:Carthage/Commandant.git
+[submodule "Submodules/Yams"]
+	path = Submodules/Yams
+	url = git@github.com:jpsim/Yams.git
+[submodule "Submodules/Result"]
+	path = Submodules/Result
+	url = https://github.com/antitypical/Result.git

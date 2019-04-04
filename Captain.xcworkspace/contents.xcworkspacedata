@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Captain.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Submodules/Commandant/Commandant.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Submodules/Result/Result.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Submodules/Yams/Yams.xcodeproj">
+   </FileRef>
+</Workspace>
