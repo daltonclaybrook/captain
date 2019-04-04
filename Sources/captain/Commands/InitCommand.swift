@@ -7,9 +7,12 @@ struct InitCommand: CommandProtocol {
     let verb = "init"
     let function = "Creates a .captain.yml file"
 
+    private let bootstrap = Bootstrap()
+
     func run(_ options: InitOptions) -> Result<(), CommandantError<()>> {
         let fullPath = PathBuilder.fullPath(from: options.path)
-        print(fullPath)
+        let result = bootstrap.bootstrapProject(atPath: fullPath)
+        print(result)
         return .success(())
     }
 }

@@ -14,12 +14,13 @@
 		751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF97B22559DD800E9A464 /* InitCommand.swift */; };
 		751DF9812255A4B300E9A464 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF9802255A47000E9A464 /* Curry.framework */; };
 		751DF9822255A4B300E9A464 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF9802255A47000E9A464 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		751DF98522561EC700E9A464 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98422561EC700E9A464 /* Bridge.swift */; };
 		751DF9882256203A00E9A464 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF9872256203A00E9A464 /* PathBuilder.swift */; };
+		751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98A2256236600E9A464 /* Bootstrap.swift */; };
+		751DF98D2256254500E9A464 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98422561EC700E9A464 /* Bridge.swift */; };
+		751DF9902256276B00E9A464 /* template.yml in Resources */ = {isa = PBXBuildFile; fileRef = 751DF98F2256276B00E9A464 /* template.yml */; };
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
-		7571A7EF2255844300077C6D /* keep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7EE2255844300077C6D /* keep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +57,13 @@
 		751DF9802255A47000E9A464 /* Curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751DF98422561EC700E9A464 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		751DF9872256203A00E9A464 /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
+		751DF98A2256236600E9A464 /* Bootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
+		751DF98F2256276B00E9A464 /* template.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.yml; sourceTree = "<group>"; };
 		7571A7862254D7F000077C6D /* captain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7902254D7F100077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A79F2254D90900077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A7A92254DE1300077C6D /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		7571A7EE2255844300077C6D /* keep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		751DF9892256235200E9A464 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				751DF98A2256236600E9A464 /* Bootstrap.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		751DF98E2256274B00E9A464 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				751DF98F2256276B00E9A464 /* template.yml */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7571A77D2254D7F000077C6D = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +164,9 @@
 		7571A79D2254D90900077C6D /* CaptainKit */ = {
 			isa = PBXGroup;
 			children = (
+				751DF98E2256274B00E9A464 /* Resources */,
+				751DF9892256235200E9A464 /* Utilities */,
 				751DF98322561EBD00E9A464 /* Helpers */,
-				7571A7EE2255844300077C6D /* keep.swift */,
 				7571A7D022557D5A00077C6D /* Supporting Files */,
 			);
 			name = CaptainKit;
@@ -268,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751DF9902256276B00E9A464 /* template.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +329,6 @@
 				751DF9882256203A00E9A464 /* PathBuilder.swift in Sources */,
 				7571A7AA2254DE1300077C6D /* main.swift in Sources */,
 				751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */,
-				751DF98522561EC700E9A464 /* Bridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +336,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7571A7EF2255844300077C6D /* keep.swift in Sources */,
+				751DF98D2256254500E9A464 /* Bridge.swift in Sources */,
+				751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

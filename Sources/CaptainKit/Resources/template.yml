@@ -1,0 +1,14 @@
+source:
+- https://github.com/daltonclaybrook/captain
+
+hooks:
+- no_push_to_master
+- no_fit_or_fdescribe
+
+custom_hooks:
+  no_fit_or_fdescribe:
+    message: "Do not commit calls to `fit(...)` or `fdescribe(...)`"
+    regex: '^abc$'
+
+exported:
+  - no_fit_or_fdescribe

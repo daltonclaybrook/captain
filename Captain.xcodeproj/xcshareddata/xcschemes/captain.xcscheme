@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "init"
+            argument = "init --path ~/Desktop/test"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
