@@ -1,9 +1,4 @@
 SWIFT_BUILD_FLAGS=--configuration release
-UNAME=$(shell uname)
-ifeq ($(UNAME), Darwin)
-SWIFT_BUILD_FLAGS+= -Xswiftc -static-stdlib
-endif
-
 CAPTAIN_EXECUTABLE=$(shell swift build $(SWIFT_BUILD_FLAGS) --show-bin-path)/captain
 
 FRAMEWORKS_FOLDER=/Library/Frameworks
@@ -13,6 +8,9 @@ CAPTAIN_PLIST=Sources/captain/Supporting Files/Info.plist
 VERSION_STRING=$(shell /usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$(CAPTAIN_PLIST)")
 
 all: build
+
+bootstrap:
+	git submodule update --init --recursive
 
 clean:
 	swift package clean
