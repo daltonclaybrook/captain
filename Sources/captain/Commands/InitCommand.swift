@@ -1,7 +1,6 @@
 import CaptainKit
 import Commandant
 import Curry
-import Result
 
 struct InitCommand: CommandProtocol {
     let verb = "init"
