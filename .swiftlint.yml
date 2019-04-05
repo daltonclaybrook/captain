@@ -1,3 +1,10 @@
+opt_in_rules:
+  - toggle_bool
+  - empty_count
+  - force_unwrapping
+  - redundant_nil_coalescing
+  - first_where
+
 included:
   - Sources
   - Tests

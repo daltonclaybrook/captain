@@ -7,20 +7,20 @@ struct InitCommand: CommandProtocol {
     let verb = "init"
     let function = "Creates a .captain.yml file"
 
-    private let bootstrap = Bootstrap()
-
-    func run(_ options: InitOptions) -> Result<(), CommandantError<()>> {
+    func run(_ options: InitOptions) -> Result<(), CaptainError> {
         let fullPath = PathBuilder.fullPath(from: options.path)
-        let result = bootstrap.bootstrapProject(atPath: fullPath)
-        print(result)
-        return .success(())
+        return Bootstrap()
+            .createConfigFile(atPath: fullPath)
+            .mapCommandResult(onSuccess: { path in
+                print("Config file successfully created at \(path)")
+            })
     }
 }
 
 struct InitOptions: OptionsProtocol {
     let path: String
 
-    static func evaluate(_ mode: CommandMode) -> Result<InitOptions, CommandantError<CommandantError<()>>> {
+    static func evaluate(_ mode: CommandMode) -> Result<InitOptions, CommandantError<CaptainError>> {
         return curry(self.init)
             <*> mode <| Option(key: "path", defaultValue: ".", usage: "The path to the project directory")
     }

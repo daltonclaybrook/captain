@@ -13,7 +13,7 @@ let package = Package(
         .package(url: "https://github.com/thoughtbot/Curry.git", from: "4.0.2"),
     ],
     targets: [
-        .target(name: "captain", dependencies: ["Commandant", "Curry" "CaptainKit"]),
+        .target(name: "captain", dependencies: ["Commandant", "Curry", "CaptainKit"]),
         .target(name: "CaptainKit", dependencies: ["Yams"]),
     ]
 )

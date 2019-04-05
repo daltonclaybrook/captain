@@ -1,7 +1,8 @@
 import CaptainKit
 import Commandant
+import Foundation
 
-let registry = CommandRegistry<CommandantError<()>>()
+let registry = CommandRegistry<CaptainError>()
 registry.register(InitCommand())
 
 let helpCommand = HelpCommand(registry: registry)
