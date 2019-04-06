@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1020"
-   version = "2.0">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7571A7852254D7F000077C6D"
-               BuildableName = "captain.app"
-               BlueprintName = "captain"
+               BlueprintIdentifier = "7571A79B2254D90900077C6D"
+               BuildableName = "CaptainKit.framework"
+               BlueprintName = "CaptainKit"
                ReferencedContainer = "container:Captain.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7571A7852254D7F000077C6D"
-            BuildableName = "captain.app"
-            BlueprintName = "captain"
-            ReferencedContainer = "container:Captain.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -48,26 +39,18 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "NO"
-      debugXPCServices = "NO"
+      debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "NO">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      allowLocationSimulation = "YES">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7571A7852254D7F000077C6D"
-            BuildableName = "captain.app"
-            BlueprintName = "captain"
+            BlueprintIdentifier = "7571A79B2254D90900077C6D"
+            BuildableName = "CaptainKit.framework"
+            BlueprintName = "CaptainKit"
             ReferencedContainer = "container:Captain.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "help install"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -77,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7571A7852254D7F000077C6D"
-            BuildableName = "captain.app"
-            BlueprintName = "captain"
+            BlueprintIdentifier = "7571A79B2254D90900077C6D"
+            BuildableName = "CaptainKit.framework"
+            BlueprintName = "CaptainKit"
             ReferencedContainer = "container:Captain.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

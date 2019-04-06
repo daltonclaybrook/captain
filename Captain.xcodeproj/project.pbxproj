@@ -17,6 +17,7 @@
 		751DF9882256203A00E9A464 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF9872256203A00E9A464 /* PathBuilder.swift */; };
 		751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98A2256236600E9A464 /* Bootstrap.swift */; };
 		751DF98D2256254500E9A464 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98422561EC700E9A464 /* Bridge.swift */; };
+		7563DC6C22592644007E5184 /* InstallCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC6B22592644007E5184 /* InstallCommand.swift */; };
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
@@ -59,6 +60,7 @@
 		751DF98422561EC700E9A464 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		751DF9872256203A00E9A464 /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 		751DF98A2256236600E9A464 /* Bootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
+		7563DC6B22592644007E5184 /* InstallCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallCommand.swift; sourceTree = "<group>"; };
 		7571A7862254D7F000077C6D /* captain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7902254D7F100077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				751DF97B22559DD800E9A464 /* InitCommand.swift */,
+				7563DC6B22592644007E5184 /* InstallCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				75F931332256E8D200DCC7B1 /* BootstrapError+String.swift in Sources */,
 				751DF9882256203A00E9A464 /* PathBuilder.swift in Sources */,
 				7571A7AA2254DE1300077C6D /* main.swift in Sources */,
+				7563DC6C22592644007E5184 /* InstallCommand.swift in Sources */,
 				75F931302256DC0900DCC7B1 /* CommandError.swift in Sources */,
 				751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */,
 			);

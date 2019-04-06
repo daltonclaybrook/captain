@@ -4,10 +4,11 @@ import Foundation
 
 let registry = CommandRegistry<CaptainError>()
 registry.register(InitCommand())
+registry.register(HelpCommand(registry: registry))
 
-let helpCommand = HelpCommand(registry: registry)
-registry.register(helpCommand)
+let install = InstallCommand()
+registry.register(install)
 
-registry.main(defaultVerb: helpCommand.verb) { error in
+registry.main(defaultVerb: install.verb) { error in
     fputs(error.description + "\n", stderr)
 }

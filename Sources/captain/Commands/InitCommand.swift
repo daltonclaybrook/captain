@@ -4,7 +4,7 @@ import Curry
 
 struct InitCommand: CommandProtocol {
     let verb = "init"
-    let function = "Creates a .captain.yml file"
+    let function = "Create a .captain.yml file"
 
     func run(_ options: InitOptions) -> Result<(), CaptainError> {
         let fullPath = PathBuilder.fullPath(from: options.path)
@@ -21,6 +21,6 @@ struct InitOptions: OptionsProtocol {
 
     static func evaluate(_ mode: CommandMode) -> Result<InitOptions, CommandantError<CaptainError>> {
         return curry(self.init)
-            <*> mode <| Option(key: "path", defaultValue: ".", usage: "The path to the project directory")
+            <*> mode <| Argument(defaultValue: ".", usage: "Path to the project directory", usageParameter: "path")
     }
 }
