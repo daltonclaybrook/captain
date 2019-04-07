@@ -7,9 +7,9 @@ struct InitCommand: CommandProtocol {
     let function = "Create a .captain.yml file"
 
     func run(_ options: InitOptions) -> Result<(), CaptainError> {
-        let fullPath = PathBuilder.fullPath(from: options.path)
+        let absolutePath = options.path.bridge().absolutePathRepresentation()
         return Bootstrap()
-            .createConfigFile(atPath: fullPath)
+            .createConfigFile(atPath: absolutePath)
             .mapCommandResult(onSuccess: { path in
                 print("Config file successfully created at \(path)")
             })
