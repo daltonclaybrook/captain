@@ -24,6 +24,7 @@
 		75BF9E76225A7C3900FBD0D3 /* Installer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9E75225A7C3900FBD0D3 /* Installer.swift */; };
 		75BF9E79225A804700FBD0D3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9E78225A804700FBD0D3 /* Config.swift */; };
 		75BF9E7E225A84D000FBD0D3 /* InstallerError+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9E7D225A84D000FBD0D3 /* InstallerError+String.swift */; };
+		75BF9E81225A883900FBD0D3 /* GitHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9E7F225A86B200FBD0D3 /* GitHook.swift */; };
 		75F931302256DC0900DCC7B1 /* CommandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9312F2256DC0900DCC7B1 /* CommandError.swift */; };
 		75F931332256E8D200DCC7B1 /* BootstrapError+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F931322256E8D200DCC7B1 /* BootstrapError+String.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		75BF9E75225A7C3900FBD0D3 /* Installer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installer.swift; sourceTree = "<group>"; };
 		75BF9E78225A804700FBD0D3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		75BF9E7D225A84D000FBD0D3 /* InstallerError+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstallerError+String.swift"; sourceTree = "<group>"; };
+		75BF9E7F225A86B200FBD0D3 /* GitHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHook.swift; sourceTree = "<group>"; };
 		75F9312F2256DC0900DCC7B1 /* CommandError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandError.swift; sourceTree = "<group>"; };
 		75F931322256E8D200DCC7B1 /* BootstrapError+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BootstrapError+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				75BF9E78225A804700FBD0D3 /* Config.swift */,
+				75BF9E7F225A86B200FBD0D3 /* GitHook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				75BF9E79225A804700FBD0D3 /* Config.swift in Sources */,
 				751DF98D2256254500E9A464 /* Bridge.swift in Sources */,
 				751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */,
+				75BF9E81225A883900FBD0D3 /* GitHook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
