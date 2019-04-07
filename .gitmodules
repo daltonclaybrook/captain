@@ -4,7 +4,7 @@
 	branch = dc-remove-result-dependency
 [submodule "Submodules/Yams"]
 	path = Submodules/Yams
-	url = git@github.com:jpsim/Yams.git
+	url = https://github.com/jpsim/Yams.git
 [submodule "Submodules/Curry"]
 	path = Submodules/Curry
 	url = https://github.com/thoughtbot/Curry.git
