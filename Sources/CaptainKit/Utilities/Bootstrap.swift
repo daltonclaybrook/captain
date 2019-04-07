@@ -19,7 +19,7 @@ hooks:
 
 custom_hooks:
   no_fit_or_fdescribe:
-    git-hook: pre-commit
+    git_hook: pre-commit
     message: "Do not commit calls to `fit(...)` or `fdescribe(...)`"
     regex: '^\\+\\s*(?:fdescribe|fit)\\(\\".*\\"\\)'
 

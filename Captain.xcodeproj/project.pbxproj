@@ -21,6 +21,9 @@
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
+		75BF9E76225A7C3900FBD0D3 /* Installer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9E75225A7C3900FBD0D3 /* Installer.swift */; };
+		75BF9E79225A804700FBD0D3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9E78225A804700FBD0D3 /* Config.swift */; };
+		75BF9E7E225A84D000FBD0D3 /* InstallerError+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9E7D225A84D000FBD0D3 /* InstallerError+String.swift */; };
 		75F931302256DC0900DCC7B1 /* CommandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9312F2256DC0900DCC7B1 /* CommandError.swift */; };
 		75F931332256E8D200DCC7B1 /* BootstrapError+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F931322256E8D200DCC7B1 /* BootstrapError+String.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A79F2254D90900077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A7A92254DE1300077C6D /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		75BF9E75225A7C3900FBD0D3 /* Installer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installer.swift; sourceTree = "<group>"; };
+		75BF9E78225A804700FBD0D3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		75BF9E7D225A84D000FBD0D3 /* InstallerError+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstallerError+String.swift"; sourceTree = "<group>"; };
 		75F9312F2256DC0900DCC7B1 /* CommandError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandError.swift; sourceTree = "<group>"; };
 		75F931322256E8D200DCC7B1 /* BootstrapError+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BootstrapError+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				751DF98A2256236600E9A464 /* Bootstrap.swift */,
+				75BF9E75225A7C3900FBD0D3 /* Installer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 		7571A79D2254D90900077C6D /* CaptainKit */ = {
 			isa = PBXGroup;
 			children = (
+				75BF9E77225A803D00FBD0D3 /* Models */,
 				751DF9892256235200E9A464 /* Utilities */,
 				751DF98322561EBD00E9A464 /* Helpers */,
 				7571A7D022557D5A00077C6D /* Supporting Files */,
@@ -189,11 +197,20 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		75BF9E77225A803D00FBD0D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75BF9E78225A804700FBD0D3 /* Config.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		75F931312256E8BC00DCC7B1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				75F931322256E8D200DCC7B1 /* BootstrapError+String.swift */,
 				751DF9872256203A00E9A464 /* NSString+Path.swift */,
+				75BF9E7D225A84D000FBD0D3 /* InstallerError+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +354,7 @@
 				7563DC6C22592644007E5184 /* InstallCommand.swift in Sources */,
 				75F931302256DC0900DCC7B1 /* CommandError.swift in Sources */,
 				751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */,
+				75BF9E7E225A84D000FBD0D3 /* InstallerError+String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BF9E76225A7C3900FBD0D3 /* Installer.swift in Sources */,
+				75BF9E79225A804700FBD0D3 /* Config.swift in Sources */,
 				751DF98D2256254500E9A464 /* Bridge.swift in Sources */,
 				751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */,
 			);

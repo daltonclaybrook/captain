@@ -7,9 +7,11 @@ struct InstallCommand: CommandProtocol {
     let function = "Parse the .captain.yml file and install any necessary git hooks"
 
     func run(_ options: InstallOptions) -> Result<(), CaptainError> {
-        print(options)
-        // TODO: do the thing
-        return .success(())
+        return options.makeInstaller()
+            .install()
+            .mapCommandResult(onSuccess: {
+                print("Successfully installed git hooks")
+            })
     }
 }
 
@@ -26,5 +28,13 @@ struct InstallOptions: OptionsProtocol {
             <*> mode <| Option(key: "clean", defaultValue: false, usage: "Clone all sources even if they are cached")
             <*> mode <| Option(key: "force", defaultValue: false,
                                usage: "Overwrite any existing git hooks that are not setup by Captain")
+    }
+
+    func makeInstaller() -> Installer {
+        return Installer(
+            projectPath: projectPath,
+            configPath: configPath,
+            force: force
+        )
     }
 }
