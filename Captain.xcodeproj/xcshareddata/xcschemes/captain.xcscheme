@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "help install"
+            argument = "run pre-commit"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

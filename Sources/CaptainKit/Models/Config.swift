@@ -8,7 +8,7 @@ public struct Config: Codable {
 public struct CustomHook: Codable {
     public let gitHook: String
     public let message: String
-    public let regex: String
+    public let regex: String?
 }
 
 extension Config {
