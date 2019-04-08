@@ -18,6 +18,9 @@
 		751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98A2256236600E9A464 /* Bootstrap.swift */; };
 		751DF98D2256254500E9A464 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98422561EC700E9A464 /* Bridge.swift */; };
 		7563DC6C22592644007E5184 /* InstallCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC6B22592644007E5184 /* InstallCommand.swift */; };
+		7563DC6E225ACFFE007E5184 /* RunCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC6D225ACFFE007E5184 /* RunCommand.swift */; };
+		7563DC71225AD4E9007E5184 /* HookRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC6F225AD3EB007E5184 /* HookRunner.swift */; };
+		7563DC73225AD4F7007E5184 /* HookRunnerError+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC72225AD4F7007E5184 /* HookRunnerError+String.swift */; };
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
@@ -65,6 +68,9 @@
 		751DF9872256203A00E9A464 /* NSString+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Path.swift"; sourceTree = "<group>"; };
 		751DF98A2256236600E9A464 /* Bootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
 		7563DC6B22592644007E5184 /* InstallCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallCommand.swift; sourceTree = "<group>"; };
+		7563DC6D225ACFFE007E5184 /* RunCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunCommand.swift; sourceTree = "<group>"; };
+		7563DC6F225AD3EB007E5184 /* HookRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookRunner.swift; sourceTree = "<group>"; };
+		7563DC72225AD4F7007E5184 /* HookRunnerError+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HookRunnerError+String.swift"; sourceTree = "<group>"; };
 		7571A7862254D7F000077C6D /* captain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7902254D7F100077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +111,7 @@
 			children = (
 				751DF97B22559DD800E9A464 /* InitCommand.swift */,
 				7563DC6B22592644007E5184 /* InstallCommand.swift */,
+				7563DC6D225ACFFE007E5184 /* RunCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			children = (
 				751DF98A2256236600E9A464 /* Bootstrap.swift */,
 				75BF9E75225A7C3900FBD0D3 /* Installer.swift */,
+				7563DC6F225AD3EB007E5184 /* HookRunner.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 				75F931322256E8D200DCC7B1 /* BootstrapError+String.swift */,
 				751DF9872256203A00E9A464 /* NSString+Path.swift */,
 				75BF9E7D225A84D000FBD0D3 /* InstallerError+String.swift */,
+				7563DC72225AD4F7007E5184 /* HookRunnerError+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7563DC73225AD4F7007E5184 /* HookRunnerError+String.swift in Sources */,
 				75F931332256E8D200DCC7B1 /* BootstrapError+String.swift in Sources */,
 				751DF9882256203A00E9A464 /* NSString+Path.swift in Sources */,
 				7571A7AA2254DE1300077C6D /* main.swift in Sources */,
@@ -358,6 +368,7 @@
 				75F931302256DC0900DCC7B1 /* CommandError.swift in Sources */,
 				751DF97C22559DD800E9A464 /* InitCommand.swift in Sources */,
 				75BF9E7E225A84D000FBD0D3 /* InstallerError+String.swift in Sources */,
+				7563DC6E225ACFFE007E5184 /* RunCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +380,7 @@
 				75BF9E79225A804700FBD0D3 /* Config.swift in Sources */,
 				751DF98D2256254500E9A464 /* Bridge.swift in Sources */,
 				751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */,
+				7563DC71225AD4E9007E5184 /* HookRunner.swift in Sources */,
 				75BF9E81225A883900FBD0D3 /* GitHook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

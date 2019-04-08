@@ -4,6 +4,7 @@ import Foundation
 
 let registry = CommandRegistry<CaptainError>()
 registry.register(InitCommand())
+registry.register(RunCommand())
 registry.register(HelpCommand(registry: registry))
 
 let install = InstallCommand()
