@@ -16,15 +16,18 @@ struct RegexEvaluator {
             return .failure(.invalidRegex(regex))
         }
 
-        let fileNamesDiff = runProcessWith(arguments: ["git", "diff", "--cached", "--name-only"])
+        let fileNamesDiff = runGitProcessWith(arguments: ["diff", "--cached", "--name-only"])
         guard fileNamesDiff.status == 0 else {
             return .failure(.gitProcessFailed)
         }
 
-        let fileNames = fileNamesDiff.standardOut.components(separatedBy: "\n")
+        let fileNames = fileNamesDiff.standardOut
+            .components(separatedBy: "\n")
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }
         var matchedFiles: [String] = []
         for file in fileNames {
-            let fileDiff = runProcessWith(arguments: ["git", "diff", "--cached", file])
+            let fileDiff = runGitProcessWith(arguments: ["diff", "--cached", file])
             guard fileDiff.status == 0 else {
                 return .failure(.gitProcessFailed)
             }
@@ -49,13 +52,21 @@ struct RegexEvaluator {
 
     // MARK: - Helpers
 
-    private func runProcessWith(arguments: [String]) -> (status: Int32, standardOut: String) {
+    private func runGitProcessWith(arguments: [String]) -> (status: Int32, standardOut: String) {
+        print("calling git with args: \(arguments)")
         let process = Process()
+        let pipe = Pipe()
+
         process.currentDirectoryPath = repoPath
+        process.launchPath = "/usr/bin/git"
         process.arguments = arguments
-        try? process.run()
+        process.standardOutput = pipe
+        process.launch()
         process.waitUntilExit()
-        let output = (process.standardOutput as? String) ?? ""
+
+        let handle = pipe.fileHandleForReading
+        let data = handle.readDataToEndOfFile()
+        let output = String(data: data, encoding: .utf8) ?? ""
         return (process.terminationStatus, output)
     }
 }
