@@ -9,6 +9,7 @@ public struct CustomHook: Codable {
     public let gitHook: String
     public let message: String
     public let regex: String?
+    public let run: String?
 }
 
 extension Config {
@@ -23,5 +24,6 @@ extension CustomHook {
         case gitHook = "git_hook"
         case message
         case regex
+        case run
     }
 }

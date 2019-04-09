@@ -25,6 +25,8 @@
 		7563DC7A225B75C9007E5184 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC78225B75A1007E5184 /* String+Additions.swift */; };
 		7563DC7D225B7888007E5184 /* Result+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC7B225B7845007E5184 /* Result+Additions.swift */; };
 		7563DC7F225B7967007E5184 /* RegexEvaluatorError+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC7E225B7967007E5184 /* RegexEvaluatorError+String.swift */; };
+		7563DC81225C3FDB007E5184 /* CommandEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC80225C3FDB007E5184 /* CommandEvaluator.swift */; };
+		7563DC83225C41E5007E5184 /* CommandEvaluatorError+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC82225C41E5007E5184 /* CommandEvaluatorError+String.swift */; };
 		7571A7A32254D90900077C6D /* CaptainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; };
 		7571A7A42254D90900077C6D /* CaptainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7571A79C2254D90900077C6D /* CaptainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7571A7AA2254DE1300077C6D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571A7A92254DE1300077C6D /* main.swift */; };
@@ -79,6 +81,8 @@
 		7563DC78225B75A1007E5184 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
 		7563DC7B225B7845007E5184 /* Result+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Additions.swift"; sourceTree = "<group>"; };
 		7563DC7E225B7967007E5184 /* RegexEvaluatorError+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegexEvaluatorError+String.swift"; sourceTree = "<group>"; };
+		7563DC80225C3FDB007E5184 /* CommandEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandEvaluator.swift; sourceTree = "<group>"; };
+		7563DC82225C41E5007E5184 /* CommandEvaluatorError+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommandEvaluatorError+String.swift"; sourceTree = "<group>"; };
 		7571A7862254D7F000077C6D /* captain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571A7902254D7F100077C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571A79C2254D90900077C6D /* CaptainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaptainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +151,7 @@
 				75BF9E75225A7C3900FBD0D3 /* Installer.swift */,
 				7563DC6F225AD3EB007E5184 /* HookRunner.swift */,
 				7563DC74225B6900007E5184 /* RegexEvaluator.swift */,
+				7563DC80225C3FDB007E5184 /* CommandEvaluator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				7563DC78225B75A1007E5184 /* String+Additions.swift */,
 				7563DC7B225B7845007E5184 /* Result+Additions.swift */,
 				7563DC7E225B7967007E5184 /* RegexEvaluatorError+String.swift */,
+				7563DC82225C41E5007E5184 /* CommandEvaluatorError+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -396,12 +402,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7563DC81225C3FDB007E5184 /* CommandEvaluator.swift in Sources */,
 				7563DC7D225B7888007E5184 /* Result+Additions.swift in Sources */,
 				7563DC76225B7592007E5184 /* RegexEvaluator.swift in Sources */,
 				75BF9E76225A7C3900FBD0D3 /* Installer.swift in Sources */,
 				7563DC7A225B75C9007E5184 /* String+Additions.swift in Sources */,
 				75BF9E79225A804700FBD0D3 /* Config.swift in Sources */,
 				751DF98D2256254500E9A464 /* Bridge.swift in Sources */,
+				7563DC83225C41E5007E5184 /* CommandEvaluatorError+String.swift in Sources */,
 				7563DC7F225B7967007E5184 /* RegexEvaluatorError+String.swift in Sources */,
 				751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */,
 				7563DC71225AD4E9007E5184 /* HookRunner.swift in Sources */,

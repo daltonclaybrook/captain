@@ -7,6 +7,8 @@ extension HookRunnerError: CustomStringConvertible {
             return "test error: \(errorString)"
         case .failedToParseConfig:
             return "Failed to parse .captain.yml"
+        case .hooksFailedEvaluation(let output):
+            return output
         }
     }
 }
