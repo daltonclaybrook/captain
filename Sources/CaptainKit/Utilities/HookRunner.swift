@@ -21,9 +21,9 @@ struct EvaluationResults {
 
 public struct HookRunner {
     public let gitHook: String
-    public let arguments: String
+    public let arguments: [String]
 
-    public init(gitHook: String, arguments: String) {
+    public init(gitHook: String, arguments: [String]) {
         self.gitHook = gitHook
         self.arguments = arguments
     }

@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "run pre-commit &quot;foo bar fizz&quot;"
+            argument = "run pre-commit foo bar fizz"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
