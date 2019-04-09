@@ -6,6 +6,7 @@ enum RegexEvaluatorError: Error {
     case matchesFound(files: [String])
 }
 
+/// TODO: Handle included/excluded files/folders
 struct RegexEvaluator {
     let repoPath: String
     let regex: String
@@ -24,7 +25,7 @@ struct RegexEvaluator {
         let fileNames = fileNamesDiff.standardOut
             .components(separatedBy: "\n")
             .map { $0.trimmingCharacters(in: .whitespaces) }
-            .filter { !$0.isEmpty }
+            .filter { !$0.isEmpty && !$0.hasSuffix(".captain.yml") }
         var matchedFiles: [String] = []
         for file in fileNames {
             let fileDiff = runGitProcessWith(arguments: ["diff", "--cached", file])
@@ -53,7 +54,6 @@ struct RegexEvaluator {
     // MARK: - Helpers
 
     private func runGitProcessWith(arguments: [String]) -> (status: Int32, standardOut: String) {
-        print("calling git with args: \(arguments)")
         let process = Process()
         let pipe = Pipe()
 

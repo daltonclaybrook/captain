@@ -70,13 +70,13 @@ public struct HookRunner {
         let failureStrings: [String] = results.compactMap { result in
             var failureGroup: [String] = []
             if let regexErrorString = result.regex?.error?.description {
-                failureGroup.append("\t\(regexErrorString)")
+                failureGroup.append(regexErrorString.indented())
             }
             if let commandErrorString = result.command?.error?.description {
-                failureGroup.append("\t\(commandErrorString)")
+                failureGroup.append(commandErrorString.indented())
             }
             if !failureGroup.isEmpty {
-                failureGroup.insert("\(result.hookName): \(result.message)", at: 0)
+                failureGroup.insert("\(result.hookName): \"\(result.message)\"", at: 0)
                 return failureGroup.joined(separator: "\n")
             } else {
                 return nil
