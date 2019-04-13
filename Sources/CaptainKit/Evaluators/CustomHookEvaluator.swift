@@ -19,13 +19,13 @@ final class CustomHookEvaluator: HookEvaluator {
         return CustomHookEvaluator.name
     }
 
-    func evaluate(with config: CustomHookConfig) -> Result<(), CustomHookEvaluatorError> {
+    func evaluate(with config: CustomHookConfig, context: EvaluationContext) -> Result<(), CustomHookEvaluatorError> {
         return .success(())
     }
 }
 
 extension CustomHookConfig: HookConfig {
-    init?(parameters: [String: Any]?, arguments: [String]) {
+    init?(parameters: [String: Any]?) {
         guard let parameters = parameters,
             let gitHook = parameters["git_hook"] as? String,
             let message = parameters["message"] as? String else { return nil }
