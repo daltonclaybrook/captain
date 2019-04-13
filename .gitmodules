@@ -1,10 +1,9 @@
-[submodule "Submodules/Commandant"]
-	path = Submodules/Commandant
-	url = https://github.com/daltonclaybrook/Commandant.git
-	branch = dc-remove-result-dependency
 [submodule "Submodules/Yams"]
 	path = Submodules/Yams
 	url = https://github.com/jpsim/Yams.git
 [submodule "Submodules/Curry"]
 	path = Submodules/Curry
 	url = https://github.com/thoughtbot/Curry.git
+[submodule "Submodules/Commandant"]
+	path = Submodules/Commandant
+	url = https://github.com/Carthage/Commandant.git

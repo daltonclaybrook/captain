@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "Commandant",
-        "repositoryURL": "https://github.com/daltonclaybrook/Commandant.git",
+        "repositoryURL": "https://github.com/Carthage/Commandant.git",
         "state": {
-          "branch": "dc-remove-result-dependency",
-          "revision": "991d62e0463a2831b6133c8f13e51ea020f62b7d",
-          "version": null
+          "branch": null,
+          "revision": "ab68611013dec67413628ac87c1f29e8427bc8e4",
+          "version": "0.17.0"
         }
       },
       {
