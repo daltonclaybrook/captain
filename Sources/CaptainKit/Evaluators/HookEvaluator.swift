@@ -4,8 +4,8 @@ typealias ErrorStringType = Error & CustomStringConvertible
 
 enum EvaluatorError: Error {
     case invalidConfig
-    case noEvaluatorForHookName(String)
-    case evaluationFailed(ErrorStringType)
+    case noEvaluatorForHook
+    case evaluationFailed(hookDescription: String, error: ErrorStringType)
 }
 
 protocol HookConfig {
@@ -22,9 +22,11 @@ protocol HookEvaluator {
     associatedtype Config: HookConfig
     associatedtype HookError: ErrorStringType
 
-    var name: String { get }
+    static var name: String { get }
+    var description: String { get }
 
-    func evaluate(with config: Config, context: EvaluationContext) -> Result<(), HookError>
+    init(config: Config, context: EvaluationContext)
+    func evaluate() -> Result<(), HookError>
 }
 
 typealias EvaluateBlock = (_ parameters: [String: Any]?, _ context: EvaluationContext) -> Result<(), EvaluatorError>
@@ -33,29 +35,24 @@ final class EvaluatorRegistry {
     private var evaluators: [String: EvaluateBlock] = [:]
 
     init() {
-        register(evaluator: CustomHookEvaluator())
+        register(CustomHookEvaluator.self)
     }
 
-    func register<T: HookEvaluator>(evaluator: T) {
-        evaluators[evaluator.name] = { parameters, context in
+    func register<T: HookEvaluator>(_ type: T.Type) {
+        evaluators[type.name] = { parameters, context in
             guard let config = T.Config(parameters: parameters) else {
                 return .failure(.invalidConfig)
             }
-            let result = evaluator.evaluate(with: config, context: context)
-            return result.mapError { .evaluationFailed($0) }
+            let evaluator = T(config: config, context: context)
+            return evaluator.evaluate()
+                .mapError { .evaluationFailed(hookDescription: evaluator.description, error: $0) }
         }
     }
 
     func evaluate(hook: Hook, context: EvaluationContext) -> Result<(), EvaluatorError> {
-        guard let evaluator = evaluators[hook.name] else {
-            return .failure(.noEvaluatorForHookName(hook.name))
-        }
-        return evaluator(hook.parameters, context)
-    }
-
-    func evaluate(hook: CustomHook, context: EvaluationContext) -> Result<(), EvaluatorError> {
-        guard let evaluator = evaluators[CustomHookEvaluator.name] else {
-            fatalError("Custom hook evaluator is not registered")
+        let name = hook.custom ? CustomHookEvaluator.name : hook.name
+        guard let evaluator = evaluators[name] else {
+            return .failure(.noEvaluatorForHook)
         }
         return evaluator(hook.parameters, context)
     }

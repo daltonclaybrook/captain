@@ -40,10 +40,9 @@ public struct Installer {
             return .failure(.noConfigAtPath)
         }
 
-        let decoder = YAMLDecoder()
         guard let configData = fileManager.contents(atPath: configPath),
             let configString = String(data: configData, encoding: .utf8),
-            (try? decoder.decode(Config.self, from: configString)) != nil else {
+            (try? Yams.load(yaml: configString) as? [String: Any]) != nil else {
             return .failure(.failedToParseConfig)
         }
 

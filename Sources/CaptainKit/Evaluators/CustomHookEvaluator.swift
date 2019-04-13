@@ -15,11 +15,19 @@ struct CustomHookConfig {
 final class CustomHookEvaluator: HookEvaluator {
     static let name = "com.captain.custom_hook_evaluator"
 
-    var name: String {
-        return CustomHookEvaluator.name
+    var description: String {
+        return config.message
     }
 
-    func evaluate(with config: CustomHookConfig, context: EvaluationContext) -> Result<(), CustomHookEvaluatorError> {
+    private let config: CustomHookConfig
+    private let context: EvaluationContext
+
+    init(config: CustomHookConfig, context: EvaluationContext) {
+        self.config = config
+        self.context = context
+    }
+
+    func evaluate() -> Result<(), CustomHookEvaluatorError> {
         guard context.gitHook == config.gitHook else {
             // This rule does not apply for this git hook
             return .success(())

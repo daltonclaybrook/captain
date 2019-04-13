@@ -7,16 +7,9 @@ public enum HookRunnerError: Error {
     case hooksFailedEvaluation(String)
 }
 
-struct EvaluationResults {
+struct NameAndResult {
     let hookName: String
-    let message: String
-    var regex: Result<(), RegexEvaluatorError>?
-    var command: Result<(), CommandEvaluatorError>?
-
-    init(hookName: String, message: String) {
-        self.hookName = hookName
-        self.message = message
-    }
+    var result: Result<(), EvaluatorError>
 }
 
 public struct HookRunner {
@@ -40,54 +33,23 @@ public struct HookRunner {
         }
 
         let config = Config(dict: configDict)
-        let context = EvaluationContext(repoPath: fileManager.currentDirectoryPath, gitHook: gitHook, arguments: arguments)
-        let hookResults = config.hooks.map { hook in
-            registry.evaluate(hook: hook, context: context)
-        }
-        let customResults = config.customHooks.map { hook in
-            registry.evaluate(hook: hook, context: context)
-        }
-
-
-        let customHooks = config.customHooks ?? [:]
-        var results: [EvaluationResults] = []
-        for (name, hook) in customHooks where hook.gitHook == gitHook {
-            var result = EvaluationResults(hookName: name, message: hook.message)
-
-            // Run regex evaluator if necessary
-            if let regex = hook.regex {
-                let evaluator = RegexEvaluator(repoPath: fileManager.currentDirectoryPath, regex: regex)
-                result.regex = evaluator.evaluate()
-            }
-
-            // Run command evaluator if necessary
-            if let command = hook.command {
-                let evaluator = CommandEvaluator(command: command)
-                result.command = evaluator.evaluate()
-            }
-
-            results.append(result)
+        let context = EvaluationContext(repoPath: fileManager.currentDirectoryPath,
+                                        gitHook: gitHook, arguments: arguments)
+        let hookResults = config.hooks.map { hook -> NameAndResult in
+            let result = registry.evaluate(hook: hook, context: context)
+            return NameAndResult(hookName: hook.name, result: result)
         }
 
-        return makeFinalResult(from: results)
+        return makeFinalResult(from: hookResults)
     }
 
     // MARK: - Helpers
 
-    private func makeFinalResult(from results: [EvaluationResults]) -> Result<(), HookRunnerError> {
+    private func makeFinalResult(from results: [NameAndResult]) -> Result<(), HookRunnerError> {
         let failureStrings: [String] = results.compactMap { result in
-            var failureGroup: [String] = []
-            if let regexErrorString = result.regex?.error?.description {
-                failureGroup.append(regexErrorString.indented())
-            }
-            if let commandErrorString = result.command?.error?.description {
-                failureGroup.append(commandErrorString.indented())
-            }
-            if !failureGroup.isEmpty {
-                failureGroup.insert("\(result.hookName): \"\(result.message)\"", at: 0)
-                return failureGroup.joined(separator: "\n")
-            } else {
-                return nil
+            let errorString = result.result.error?.description
+            return errorString.map {
+                "\(result.hookName): \($0)"
             }
         }
 
@@ -95,7 +57,7 @@ public struct HookRunner {
         let output = """
         The following failures occurred for the "\(gitHook)" git hook:
 
-        \(failureStrings.joined(separator: "\n\n"))
+        \(failureStrings.joined(separator: "\n\n").indented())
         """
         return .failure(.hooksFailedEvaluation(output))
     }
