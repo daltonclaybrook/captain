@@ -22,6 +22,7 @@ struct EvaluationResults {
 public struct HookRunner {
     public let gitHook: String
     public let arguments: [String]
+    private let registry = EvaluatorRegistry.registryWithAllHooks()
 
     public init(gitHook: String, arguments: [String]) {
         self.gitHook = gitHook
@@ -53,7 +54,7 @@ public struct HookRunner {
             }
 
             // Run command evaluator if necessary
-            if let command = hook.run {
+            if let command = hook.command {
                 let evaluator = CommandEvaluator(command: command)
                 result.command = evaluator.evaluate()
             }

@@ -31,10 +31,7 @@ typealias EvaluateBlock = (_ parameters: [String: Any]?, _ context: EvaluationCo
 
 final class EvaluatorRegistry {
     private var evaluators: [String: EvaluateBlock] = [:]
-
-    init() {
-        register(evaluator: CustomHookEvaluator())
-    }
+    private let customHookEvaluator = CustomHookEvaluator()
 
     func register<T: HookEvaluator>(evaluator: T) {
         evaluators[evaluator.name] = { parameters, context in
@@ -54,11 +51,9 @@ final class EvaluatorRegistry {
         return evaluator(parameters, context)
     }
 
-    func evaluateCustomHook(name: String, parameters: [String: Any]?,
+    func evaluateCustomHook(name: String, config: CustomHookConfig,
                             context: EvaluationContext) -> Result<(), EvaluatorError> {
-        guard let evaluator = evaluators[CustomHookEvaluator.name] else {
-            fatalError("Missing custom hook evaluator")
-        }
-        return evaluator(parameters, context)
+        let result = customHookEvaluator.evaluate(with: config, context: context)
+        return result.mapError { .evaluationFailed($0) }
     }
 }

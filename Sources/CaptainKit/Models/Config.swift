@@ -2,14 +2,14 @@ import Foundation
 
 public struct Config: Codable {
     public let hooks: [String]?
-    public let customHooks: [String: CustomHook]?
+    public let customHooks: [String: CustomHookConfig]?
 }
 
-public struct CustomHook: Codable {
+public struct CustomHookConfig: Codable {
     public let gitHook: String
     public let message: String
     public let regex: String?
-    public let run: String?
+    public let command: String?
 }
 
 extension Config {
@@ -19,11 +19,11 @@ extension Config {
     }
 }
 
-extension CustomHook {
+extension CustomHookConfig {
     public enum CodingKeys: String, CodingKey {
         case gitHook = "git_hook"
         case message
         case regex
-        case run
+        case command
     }
 }

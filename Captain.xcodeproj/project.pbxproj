@@ -17,6 +17,7 @@
 		751DF9882256203A00E9A464 /* NSString+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF9872256203A00E9A464 /* NSString+Path.swift */; };
 		751DF98C225624CD00E9A464 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98A2256236600E9A464 /* Bootstrap.swift */; };
 		751DF98D2256254500E9A464 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751DF98422561EC700E9A464 /* Bridge.swift */; };
+		755C7E982262513F00D95DEC /* EvaluatorRegistry+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755C7E972262513F00D95DEC /* EvaluatorRegistry+Factory.swift */; };
 		7563DC6C22592644007E5184 /* InstallCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC6B22592644007E5184 /* InstallCommand.swift */; };
 		7563DC6E225ACFFE007E5184 /* RunCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC6D225ACFFE007E5184 /* RunCommand.swift */; };
 		7563DC71225AD4E9007E5184 /* HookRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563DC6F225AD3EB007E5184 /* HookRunner.swift */; };
@@ -76,6 +77,7 @@
 		751DF98422561EC700E9A464 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		751DF9872256203A00E9A464 /* NSString+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Path.swift"; sourceTree = "<group>"; };
 		751DF98A2256236600E9A464 /* Bootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
+		755C7E972262513F00D95DEC /* EvaluatorRegistry+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EvaluatorRegistry+Factory.swift"; sourceTree = "<group>"; };
 		7563DC6B22592644007E5184 /* InstallCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallCommand.swift; sourceTree = "<group>"; };
 		7563DC6D225ACFFE007E5184 /* RunCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunCommand.swift; sourceTree = "<group>"; };
 		7563DC6F225AD3EB007E5184 /* HookRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookRunner.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				7563DC7E225B7967007E5184 /* RegexEvaluatorError+String.swift */,
 				7563DC82225C41E5007E5184 /* CommandEvaluatorError+String.swift */,
 				75F76D0822622C750090BAA3 /* CustomHookEvaluatorError+String.swift */,
+				755C7E972262513F00D95DEC /* EvaluatorRegistry+Factory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				75BF9E79225A804700FBD0D3 /* Config.swift in Sources */,
 				7563DC86225E07EE007E5184 /* HookEvaluator.swift in Sources */,
 				751DF98D2256254500E9A464 /* Bridge.swift in Sources */,
+				755C7E982262513F00D95DEC /* EvaluatorRegistry+Factory.swift in Sources */,
 				7563DC83225C41E5007E5184 /* CommandEvaluatorError+String.swift in Sources */,
 				75F76D0722622C020090BAA3 /* CustomHookEvaluator.swift in Sources */,
 				7563DC7F225B7967007E5184 /* RegexEvaluatorError+String.swift in Sources */,
