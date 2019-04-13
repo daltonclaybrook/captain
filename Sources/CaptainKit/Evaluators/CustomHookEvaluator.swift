@@ -5,7 +5,20 @@ enum CustomHookEvaluatorError: Error {
     case commandError(CommandEvaluatorError)
 }
 
-final class CustomHookEvaluator {
+struct CustomHookConfig {
+    let gitHook: String
+    let message: String
+    let regex: String?
+    let command: String?
+}
+
+final class CustomHookEvaluator: HookEvaluator {
+    static let name = "com.captain.custom_hook_evaluator"
+
+    var name: String {
+        return CustomHookEvaluator.name
+    }
+
     func evaluate(with config: CustomHookConfig, context: EvaluationContext) -> Result<(), CustomHookEvaluatorError> {
         guard context.gitHook == config.gitHook else {
             // This rule does not apply for this git hook
@@ -26,5 +39,17 @@ final class CustomHookEvaluator {
             }
         }
         return .success(())
+    }
+}
+
+extension CustomHookConfig: HookConfig {
+    init?(parameters: [String: Any]?) {
+        guard let parameters = parameters,
+            let gitHook = parameters["git_hook"] as? String,
+            let message = parameters["message"] as? String else { return nil }
+        self.gitHook = gitHook
+        self.message = message
+        self.regex = parameters["regex"] as? String
+        self.command = parameters["command"] as? String
     }
 }

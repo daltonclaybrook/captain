@@ -33,14 +33,21 @@ public struct HookRunner {
         let fileManager = FileManager.default
         let configPath = fileManager.currentDirectoryPath.bridge().appendingPathComponent(".captain.yml")
 
-        let decoder = YAMLDecoder()
         guard let configData = fileManager.contents(atPath: configPath),
             let configString = String(data: configData, encoding: .utf8),
-            let config = try? decoder.decode(Config.self, from: configString) else {
+            let configDict = try? Yams.load(yaml: configString) as? [String: Any] else {
                 return .failure(.failedToParseConfig)
         }
 
-        // TODO: Run hooks provided out of the box by Captain
+        let config = Config(dict: configDict)
+        let context = EvaluationContext(repoPath: fileManager.currentDirectoryPath, gitHook: gitHook, arguments: arguments)
+        let hookResults = config.hooks.map { hook in
+            registry.evaluate(hook: hook, context: context)
+        }
+        let customResults = config.customHooks.map { hook in
+            registry.evaluate(hook: hook, context: context)
+        }
+
 
         let customHooks = config.customHooks ?? [:]
         var results: [EvaluationResults] = []

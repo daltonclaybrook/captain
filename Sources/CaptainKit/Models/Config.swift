@@ -1,29 +1,28 @@
-import Foundation
-
-public struct Config: Codable {
-    public let hooks: [String]?
-    public let customHooks: [String: CustomHookConfig]?
+public struct Config {
+    public let hooks: [Hook]
+    public let customHooks: [CustomHook]
 }
 
-public struct CustomHookConfig: Codable {
-    public let gitHook: String
-    public let message: String
-    public let regex: String?
-    public let command: String?
+public struct Hook {
+    public let name: String
+    public let parameters: [String: Any]
+}
+
+/// Structurally the same as `Hook`, but nominally different to
+/// prevent incorrect usage in the `EvaluatorRegistry`
+public struct CustomHook {
+    public let name: String
+    public let parameters: [String: Any]
 }
 
 extension Config {
-    public enum CodingKeys: String, CodingKey {
-        case hooks
-        case customHooks = "custom_hooks"
-    }
-}
-
-extension CustomHookConfig {
-    public enum CodingKeys: String, CodingKey {
-        case gitHook = "git_hook"
-        case message
-        case regex
-        case command
+    init(dict: [String: Any]) {
+        let hookNames = dict["hooks"] as? [String] ?? []
+        let customHookDicts = dict["custom_hooks"] as? [String: [String: Any]] ?? [:]
+        self.hooks = hookNames.map { name in
+            let parameters = dict[name] as? [String: Any] ?? [:]
+            return Hook(name: name, parameters: parameters)
+        }
+        self.customHooks = customHookDicts.map(CustomHook.init)
     }
 }
