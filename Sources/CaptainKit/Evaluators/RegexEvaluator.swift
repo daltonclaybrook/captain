@@ -6,10 +6,10 @@ enum RegexEvaluatorError: Error {
     case matchesFound(files: [String])
 }
 
-/// TODO: Handle included/excluded files/folders
 struct RegexEvaluator {
     let repoPath: String
     let regex: String
+    let paths: RegexPaths
 
     func evaluate() -> Result<(), RegexEvaluatorError> {
         guard let expression = try? NSRegularExpression(
@@ -29,6 +29,7 @@ struct RegexEvaluator {
             .filter { !$0.isEmpty && !$0.hasSuffix(".captain.yml") }
         var matchedFiles: [String] = []
         for file in fileNames {
+            guard shouldCheck(file: file, with: paths) else { continue }
             let fileDiff = shell.run(command: "git diff --cached \(file)")
             guard fileDiff.status == 0 else {
                 return .failure(.gitProcessFailed)
@@ -49,6 +50,18 @@ struct RegexEvaluator {
             return .failure(.matchesFound(files: matchedFiles))
         } else {
             return .success(())
+        }
+    }
+
+    // MARK: - Private
+
+    private func shouldCheck(file: String, with paths: RegexPaths) -> Bool {
+        let isIncluded = paths.included.contains { file.hasPrefix($0) }
+        let isExcluded = paths.excluded.contains { file.hasPrefix($0) }
+        if !paths.included.isEmpty {
+            return isIncluded
+        } else {
+            return !isExcluded
         }
     }
 }

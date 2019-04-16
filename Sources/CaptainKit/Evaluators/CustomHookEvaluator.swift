@@ -33,7 +33,7 @@ final class CustomHookEvaluator: HookEvaluator {
             return .success(())
         }
         if let regex = config.regex {
-            let evaluator = RegexEvaluator(repoPath: context.repoPath, regex: regex)
+            let evaluator = RegexEvaluator(repoPath: context.repoPath, regex: regex, paths: context.regexPaths)
             let result = evaluator.evaluate()
             if let error = result.error {
                 return .failure(.regexError(error))

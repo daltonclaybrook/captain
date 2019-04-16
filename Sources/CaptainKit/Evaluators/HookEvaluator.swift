@@ -16,6 +16,7 @@ struct EvaluationContext {
     let repoPath: String
     let gitHook: String
     let arguments: [String]
+    let regexPaths: RegexPaths
 }
 
 protocol HookEvaluator {

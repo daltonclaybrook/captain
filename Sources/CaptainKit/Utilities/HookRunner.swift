@@ -33,8 +33,8 @@ public struct HookRunner {
         }
 
         let config = Config(dict: configDict)
-        let context = EvaluationContext(repoPath: fileManager.currentDirectoryPath,
-                                        gitHook: gitHook, arguments: arguments)
+        let context = EvaluationContext(repoPath: fileManager.currentDirectoryPath, gitHook: gitHook,
+                                        arguments: arguments, regexPaths: config.regexPaths)
         let hookResults = config.hooks.map { hook -> NameAndResult in
             let result = registry.evaluate(hook: hook, context: context)
             return NameAndResult(hookName: hook.name, result: result)
