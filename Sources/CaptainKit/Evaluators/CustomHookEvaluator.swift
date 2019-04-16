@@ -40,7 +40,7 @@ final class CustomHookEvaluator: HookEvaluator {
             }
         }
         if let command = config.command {
-            let evaluator = CommandEvaluator(command: command)
+            let evaluator = CommandEvaluator(repoPath: context.repoPath, command: command)
             let result = evaluator.evaluate()
             if let error = result.error {
                 return .failure(.commandError(error))

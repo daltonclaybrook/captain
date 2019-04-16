@@ -1,6 +1,8 @@
 extension CommandEvaluatorError: CustomStringConvertible {
     var description: String {
-        // TODO: Implement
-        return "error"
+        switch self {
+        case .commandFailed(let error):
+            return "Command failed: \(error)"
+        }
     }
 }

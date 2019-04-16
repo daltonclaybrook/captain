@@ -17,7 +17,8 @@ struct RegexEvaluator {
             return .failure(.invalidRegex(regex))
         }
 
-        let fileNamesDiff = runGitProcessWith(arguments: ["diff", "--cached", "--name-only"])
+        let shell = Shell(directory: repoPath)
+        let fileNamesDiff = shell.run(command: "git diff --cached --name-only")
         guard fileNamesDiff.status == 0 else {
             return .failure(.gitProcessFailed)
         }
@@ -28,7 +29,7 @@ struct RegexEvaluator {
             .filter { !$0.isEmpty && !$0.hasSuffix(".captain.yml") }
         var matchedFiles: [String] = []
         for file in fileNames {
-            let fileDiff = runGitProcessWith(arguments: ["diff", "--cached", file])
+            let fileDiff = shell.run(command: "git diff --cached \(file)")
             guard fileDiff.status == 0 else {
                 return .failure(.gitProcessFailed)
             }
@@ -49,24 +50,5 @@ struct RegexEvaluator {
         } else {
             return .success(())
         }
-    }
-
-    // MARK: - Helpers
-
-    private func runGitProcessWith(arguments: [String]) -> (status: Int32, standardOut: String) {
-        let process = Process()
-        let pipe = Pipe()
-
-        process.currentDirectoryPath = repoPath
-        process.launchPath = "/usr/bin/git"
-        process.arguments = arguments
-        process.standardOutput = pipe
-        process.launch()
-        process.waitUntilExit()
-
-        let handle = pipe.fileHandleForReading
-        let data = handle.readDataToEndOfFile()
-        let output = String(data: data, encoding: .utf8) ?? ""
-        return (process.terminationStatus, output)
     }
 }

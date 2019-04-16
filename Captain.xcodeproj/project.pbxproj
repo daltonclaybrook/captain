@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75184D7A2265669500A207DA /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75184D782265666D00A207DA /* Shell.swift */; };
 		751DF7B722558D6E00E9A464 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B522558D0C00E9A464 /* Commandant.framework */; };
 		751DF7B822558D6E00E9A464 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B522558D0C00E9A464 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		751DF7BA22558D7200E9A464 /* Yams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 751DF7B622558D0F00E9A464 /* Yams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		75184D782265666D00A207DA /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		751DF7B522558D0C00E9A464 /* Commandant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commandant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751DF7B622558D0F00E9A464 /* Yams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Yams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751DF97B22559DD800E9A464 /* InitCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCommand.swift; sourceTree = "<group>"; };
@@ -160,8 +162,7 @@
 				751DF98A2256236600E9A464 /* Bootstrap.swift */,
 				75BF9E75225A7C3900FBD0D3 /* Installer.swift */,
 				7563DC6F225AD3EB007E5184 /* HookRunner.swift */,
-				7563DC74225B6900007E5184 /* RegexEvaluator.swift */,
-				7563DC80225C3FDB007E5184 /* CommandEvaluator.swift */,
+				75184D782265666D00A207DA /* Shell.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -185,6 +186,8 @@
 			children = (
 				7563DC85225E07ED007E5184 /* HookEvaluator.swift */,
 				75F76D0522622BF00090BAA3 /* CustomHookEvaluator.swift */,
+				7563DC74225B6900007E5184 /* RegexEvaluator.swift */,
+				7563DC80225C3FDB007E5184 /* CommandEvaluator.swift */,
 			);
 			path = Evaluators;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75184D7A2265669500A207DA /* Shell.swift in Sources */,
 				7563DC81225C3FDB007E5184 /* CommandEvaluator.swift in Sources */,
 				75F76D0A22622C780090BAA3 /* CustomHookEvaluatorError+String.swift in Sources */,
 				7563DC7D225B7888007E5184 /* Result+Additions.swift in Sources */,

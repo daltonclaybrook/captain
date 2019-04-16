@@ -46,7 +46,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
+      useCustomWorkingDirectory = "YES"
+      customWorkingDirectory = "/Users/daltonclaybrook/Desktop/foo"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "NO"
       debugXPCServices = "NO"
@@ -64,7 +65,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "run pre-commit foo bar fizz"
+            argument = "run pre-commit"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
