@@ -30,7 +30,7 @@ struct RegexEvaluator {
         var matchedFiles: [String] = []
         for file in fileNames {
             guard shouldCheck(file: file, with: paths) else { continue }
-            let fileDiff = shell.run(command: "git diff --cached \(file)")
+            let fileDiff = shell.run(command: "git diff --cached -- \(file)")
             guard fileDiff.status == 0 else {
                 return .failure(.gitProcessFailed)
             }
